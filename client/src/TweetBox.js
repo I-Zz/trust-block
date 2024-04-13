@@ -23,8 +23,20 @@ function TweetBox() {
       const { ethereum } = window;
 
       if (ethereum) {
+//         const provider = new ethers.BrowserProvider(window.ethereum);
+// export const connect = async () => {
+//   await provider.send("eth_requestAccounts", []);
+//   return getContract();
+// };
+
+// export const getContract = async () => {
+//   const signer = provider.getSigner();
+//   const contract = new ethers.Contract(address, abi, signer);
+//   return { signer: signer, contract: contract };
+// };
+
         const provider = new ethers.BrowserProvider(ethereum);
-        const signer = provider.getSigner();
+        const signer = await provider.getSigner();
         const TwitterContract = new ethers.Contract(
           TwitterContractAddress,
           Twitter.abi,
