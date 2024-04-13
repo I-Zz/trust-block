@@ -23,6 +23,7 @@ function App() {
       console.log('Connected to chain:' + chainId)
 
       const sepoliaChainId = '0xaa36a7'
+      
 
       if (chainId !== sepoliaChainId) {
         alert('You are not connected to the Sepolia Testnet!')
